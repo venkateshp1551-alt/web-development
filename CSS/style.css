@@ -1,0 +1,307 @@
+:root {
+    --primary: #101d3a;
+    --accent: #f5b82e;
+    --background: #f4f6fa;
+    --text: #222222;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+nav {
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+section {
+    background-color: var(--white);
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--primary);
+    font-size: 26px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #b8860b;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #101d3a,
+        #294c85,
+        #14264a
+    );
+    color: var(--white);
+    text-align: center;
+    padding: 100px 25px;
+    border-radius: 12px;
+}
+
+.hero-content h2 {
+    color: var(--accent);
+    font-size: 36px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.btn,
+.book-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    text-decoration: none;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.book-btn:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.team-list {
+    padding-left: 25px;
+}
+
+.team-list li {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    min-width: 550px;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 15px;
+}
+
+td {
+    padding: 13px;
+    border: 1px solid #dddddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #fff0c2;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: var(--white);
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+}
+
+.book-btn {
+    width: 100%;
+    margin: 10px 0;
+    padding: 14px;
+}
+
+#guidelines {
+    border-left: 5px solid var(--accent);
+}
+
+#guidelines ul {
+    padding-left: 25px;
+}
+
+#guidelines ul li {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 65px 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 27px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 21px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    .hero-content h2 {
+        font-size: 23px;
+    }
+
+    .btn {
+        display: block;
+        margin: 12px auto;
+        max-width: 220px;
+    }
+
+    section {
+        padding: 18px;
+    }
+}
