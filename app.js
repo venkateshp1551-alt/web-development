@@ -55,3 +55,59 @@ window.addEventListener("load", function () {
     }
 
 });
+
+// Activity 7: Live Booking Summary
+
+// Select form elements using DOM selectors
+const matchSelect = document.getElementById("match");
+const standSelect = document.getElementById("stand");
+const ticketInput = document.getElementById("ticket");
+
+// Ticket prices
+const standPrices = {
+    "General Stand": 500,
+    "Premium Stand": 1000,
+    "VIP Stand": 2000
+};
+
+// Update Booking Summary
+function updateSummary() {
+
+    const match = matchSelect.value;
+    const stand = standSelect.value;
+    const quantity = Number(ticketInput.value);
+
+    const price = standPrices[stand] || 0;
+    const total = price * quantity;
+
+    // Update summary details
+    document.getElementById("summaryMatch").textContent =
+        match || "Not selected";
+
+    document.getElementById("summaryStand").textContent =
+        stand || "Not selected";
+
+    document.getElementById("summaryQuantity").textContent =
+        quantity || 0;
+
+    document.getElementById("summaryPrice").textContent =
+        price;
+
+    document.getElementById("totalPrice").textContent =
+        total;
+
+    // Show notification
+    if (match && stand && quantity >= 1 && quantity <= 10) {
+        showToast("Booking Summary Updated!");
+    }
+}
+
+// Add change event listeners
+matchSelect.addEventListener("change", updateSummary);
+
+standSelect.addEventListener("change", updateSummary);
+
+ticketInput.addEventListener("input", updateSummary);
+
+// Display initial summary
+updateSummary();
