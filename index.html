@@ -16,15 +16,25 @@
         <p>Book Your Tickets and Experience the Excitement!</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#matches">Matches</a></li>
-            <li><a href="#booking">Book Tickets</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#guidelines">Guidelines</a></li>
-        </ul>
-    </nav>
+    
+<nav class="navbar">
+
+    <div class="nav-logo">IPL 2026</div>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#matches">Matches</a></li>
+        <li><a href="#booking">Book Tickets</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+    </ul>
+
+</nav>
+
 
     <main>
 
@@ -64,48 +74,57 @@
             </ul>
         </section>
 
-        <section id="matches">
-            <h2>IPL 2026 Match Schedule</h2>
+        
+<section id="matches">
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Match</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Venue</th>
-                        </tr>
-                    </thead>
+    <h2>IPL 2026 Match Schedule</h2>
 
-                    <tbody>
-                        <tr>
-    <td>RCB vs MI</td>
-    <td>April 10, 2026</td>
-    <td>2:30 PM</td>
-    <td>Chinnaswamy Stadium</td>
-    <td><a href="#booking" class="book-btn">Book Tickets</a></td>
-</tr>
+    <div class="match-controls">
 
-<tr>
-    <td>CSK vs KKR</td>
-    <td>April 11, 2026</td>
-    <td>7:00 PM</td>
-    <td>MCA Stadium</td>
-    <td><a href="#booking" class="book-btn">Book Tickets</a></td>
-</tr>
+        <select id="teamFilter">
+            <option value="all">All Teams</option>
+            <option value="RCB">RCB</option>
+            <option value="MI">MI</option>
+            <option value="CSK">CSK</option>
+            <option value="KKR">KKR</option>
+            <option value="RR">RR</option>
+            <option value="GT">GT</option>
+        </select>
 
-<tr>
-    <td>RR vs GT</td>
-    <td>April 12, 2026</td>
-    <td>7:00 PM</td>
-    <td>Wankhede Stadium</td>
-    <td><a href="#booking" class="book-btn">Book Tickets</a></td>
-</tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        <button id="gridView">Grid View</button>
+        <button id="listView">List View</button>
+
+    </div>
+
+    <div class="match-grid" id="matchContainer">
+
+        <div class="match-card" data-teams="RCB MI">
+            <h3>RCB vs MI</h3>
+            <p>Date: April 10, 2026</p>
+            <p>Time: 2:30 PM</p>
+            <p>Venue: Chinnaswamy Stadium</p>
+            <a href="#booking" class="book-btn">Book Tickets</a>
+        </div>
+
+        <div class="match-card" data-teams="CSK KKR">
+            <h3>CSK vs KKR</h3>
+            <p>Date: April 11, 2026</p>
+            <p>Time: 7:00 PM</p>
+            <p>Venue: MCA Stadium</p>
+            <a href="#booking" class="book-btn">Book Tickets</a>
+        </div>
+
+        <div class="match-card" data-teams="RR GT">
+            <h3>RR vs GT</h3>
+            <p>Date: April 12, 2026</p>
+            <p>Time: 7:00 PM</p>
+            <p>Venue: Wankhede Stadium</p>
+            <a href="#booking" class="book-btn">Book Tickets</a>
+        </div>
+
+    </div>
+
+</section>
 
         <section id="booking">
             <h2>Book Your Tickets</h2>
@@ -204,37 +223,46 @@
 
         </section>
 
-        <section id="guidelines">
-            <h2>Match Guidelines and Stadium Rules</h2>
+        
+<section id="guidelines">
 
+    <h2>Match Guidelines and Stadium Rules</h2>
+
+    <div class="guidelines-grid">
+
+        <div class="guideline-card">
             <h3>Entry Guidelines</h3>
-
             <ul>
-                <li>Carry a valid match ticket for entry.</li>
-                <li>Carry a valid government-issued photo ID.</li>
-                <li>Arrive at the stadium well before match time.</li>
-                <li>Follow security checking procedures.</li>
+                <li>Carry valid match tickets.</li>
+                <li>Carry government photo ID.</li>
+                <li>Arrive before match time.</li>
+                <li>Follow security procedures.</li>
             </ul>
+        </div>
 
+        <div class="guideline-card">
             <h3>Prohibited Items</h3>
-
             <ul>
-                <li>Outside food and beverages may not be permitted.</li>
-                <li>Weapons and sharp objects are prohibited.</li>
-                <li>Fireworks and dangerous materials are prohibited.</li>
-                <li>Professional cameras may require special permission.</li>
+                <li>Outside food and beverages.</li>
+                <li>Weapons and sharp objects.</li>
+                <li>Fireworks and dangerous materials.</li>
+                <li>Professional cameras without permission.</li>
             </ul>
+        </div>
 
+        <div class="guideline-card">
             <h3>General Instructions</h3>
-
             <ul>
-                <li>Follow instructions given by stadium officials.</li>
-                <li>Do not damage stadium property.</li>
-                <li>Maintain cleanliness inside the stadium.</li>
-                <li>Do not enter restricted areas.</li>
-                <li>Tickets are subject to the stadium's terms and conditions.</li>
+                <li>Follow stadium officials.</li>
+                <li>Do not damage property.</li>
+                <li>Maintain cleanliness.</li>
+                <li>Avoid restricted areas.</li>
             </ul>
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
     </main>
 

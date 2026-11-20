@@ -111,3 +111,85 @@ ticketInput.addEventListener("input", updateSummary);
 
 // Display initial summary
 updateSummary();
+
+
+// ACTIVITY 8: HAMBURGER MENU
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function() {
+
+        navLinks.classList.toggle("active");
+
+        menuToggle.textContent =
+            navLinks.classList.contains("active") ? "✕" : "☰";
+
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+            navLinks.classList.remove("active");
+            menuToggle.textContent = "☰";
+        });
+
+    });
+}
+
+
+// ACTIVITY 8: TEAM FILTER
+
+const teamFilter = document.getElementById("teamFilter");
+const matchCards = document.querySelectorAll(".match-card");
+
+if (teamFilter) {
+
+    teamFilter.addEventListener("change", function() {
+
+        const selectedTeam = teamFilter.value;
+
+        matchCards.forEach(function(card) {
+
+            const teams = card.dataset.teams.split(" ");
+
+            card.style.display =
+                selectedTeam === "all" ||
+                teams.includes(selectedTeam) ? "" : "none";
+
+        });
+
+        showToast("Match filter updated!");
+
+    });
+}
+
+
+// ACTIVITY 8: GRID AND LIST VIEW
+
+const matchContainer = document.getElementById("matchContainer");
+
+const gridButton = document.getElementById("gridView");
+const listButton = document.getElementById("listView");
+
+if (matchContainer && gridButton && listButton) {
+
+    gridButton.addEventListener("click", function() {
+
+        matchContainer.classList.remove("list-view");
+
+        showToast("Grid View Enabled!");
+
+    });
+
+    listButton.addEventListener("click", function() {
+
+        matchContainer.classList.add("list-view");
+
+        showToast("List View Enabled!");
+
+    });
+
+}
